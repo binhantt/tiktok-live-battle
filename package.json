@@ -1,0 +1,19 @@
+{
+  "name": "tiktok-live-battle",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TikTok Live Interactive Battle Arena",
+  "scripts": {
+    "infra:up": "node scripts/start-infrastructure.cjs",
+    "infra:down": "docker compose down",
+    "build": "pnpm --filter server build && pnpm --filter client build",
+    "test": "pnpm --filter server test",
+    "dev:api": "pnpm --filter server start:api:dev",
+    "dev:connector": "pnpm --filter server start:connector:dev",
+    "dev:worker": "pnpm --filter server start:worker:dev",
+    "dev:battle": "pnpm --filter server start:battle:dev",
+    "dev:server": "pnpm infra:up && pnpm --filter server start:all:dev",
+    "dev:client": "pnpm --filter client dev",
+    "simulate": "pnpm --filter server simulate"
+  }
+}

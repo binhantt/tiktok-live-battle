@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/api-gateway/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true
+  },
+  "monorepo": true,
+  "root": "apps/api-gateway",
+  "projects": {
+    "api-gateway": {
+      "type": "application",
+      "root": "apps/api-gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/api-gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api-gateway/tsconfig.app.json"
+      }
+    },
+    "tiktok-connector": {
+      "type": "application",
+      "root": "apps/tiktok-connector",
+      "entryFile": "main",
+      "sourceRoot": "apps/tiktok-connector/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/tiktok-connector/tsconfig.app.json"
+      }
+    },
+    "event-worker": {
+      "type": "application",
+      "root": "apps/event-worker",
+      "entryFile": "main",
+      "sourceRoot": "apps/event-worker/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/event-worker/tsconfig.app.json"
+      }
+    },
+    "battle-engine": {
+      "type": "application",
+      "root": "apps/battle-engine",
+      "entryFile": "main",
+      "sourceRoot": "apps/battle-engine/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/battle-engine/tsconfig.app.json"
+      }
+    },
+    "shared": {
+      "type": "library",
+      "root": "libs/shared",
+      "entryFile": "index",
+      "sourceRoot": "libs/shared/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    }
+  }
+}
